@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ProyectoIntegrador": {
+    "proyectointegrador": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/proyecto-integrador",
+            "outputPath": "dist/proyectointegrador",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,12 +28,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "ProyectoIntegrador/node_modules/bootstrap/dist/css/bootstrap.css"
+              "src/styles.scss"
             ],
-            "scripts": [
-              "ProyectoIntegrador/node_modules/bootstrap/dist/js/bootstrap.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -72,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ProyectoIntegrador:build:production"
+              "browserTarget": "proyectointegrador:build:production"
             },
             "development": {
-              "browserTarget": "ProyectoIntegrador:build:development"
+              "browserTarget": "proyectointegrador:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ProyectoIntegrador:build"
+            "browserTarget": "proyectointegrador:build"
           }
         },
         "test": {
@@ -99,15 +96,18 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [   
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js"       
+            ]
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": "728d3a8b-7f83-4550-817e-b41e04a341c1"
+    "analytics": "67396ea8-0561-454a-807c-9e56f0b31f0a"
   }
 }
