@@ -4,30 +4,35 @@
 div {
     background-color: #5c7cf3;
     text-align: center;
+    box-shadow: 5px 5px 10px #5c7cf3;
 }
-/*nombre*/
+/*nombre y titulo*/
 #nombre{
     font-weight: bold;
+    margin-left: 20%;
+}
+#titulo{
+    font-weight:lighter;
     margin-left: 20%;
 }
 /*foto de perfil*/
 @media (min-width:576px){
     #fotoperfil{
         position: absolute;
-        width: 15%;
+        width: 20%;
         border-radius: 90%;
-        box-shadow: 3px 3px 3px grey;
-        left: 20px;
-        top: 300px;
+        box-shadow: 3px 3px 5px #597af3;
+        left: 25px;
+        top: 350px;
     }}
 @media (max-width:575px){
         #fotoperfil{
-            position: absolute;
+            position: center;
             width: 15%;
             border-radius: 100%;
-            box-shadow: 3px 3px 3px grey;
-            left: 33%;
-            top: 300px;
+            box-shadow: 3px 3px 5px #597af3;
+            left: 15%;
+            top: 350px;
         }
 }
 #fotoperfil{
