@@ -4,6 +4,7 @@ package com.miporfolio.monse.Security.Controller;
 import com.miporfolio.monse.Security.Dto.JwtDTO;
 import com.miporfolio.monse.Security.Dto.LoginUsuario;
 import com.miporfolio.monse.Security.Dto.NuevoUsuario;
+
 import com.miporfolio.monse.Security.Enums.Entity.Rol;
 import com.miporfolio.monse.Security.Enums.Entity.Usuario;
 import com.miporfolio.monse.Security.Enums.RolNombre;
@@ -23,15 +24,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin
+@CrossOrigin (origins = "*")
 public class AuthController {
     
      @Autowired
@@ -85,6 +82,6 @@ public class AuthController {
         String jwt = jwtProvider.generateToken(authentication);
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         JwtDTO jwtDTO = new JwtDTO(jwt, userDetails.getUsername(), userDetails.getAuthorities());
-        return new ResponseEntity<JwtDTO>(jwtDTO, HttpStatus.OK);
+        return new ResponseEntity<>(jwtDTO, HttpStatus.OK);
     }
 }
