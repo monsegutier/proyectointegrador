@@ -4,27 +4,21 @@
       <div class="col-md-9 col-lg-6 col-xl-5">
         <img src="../../../assets/login.png"
           class="img-fluid" alt="Sample image">
-      </div>
-      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form>
+       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-            <p class="lead fw-normal mb-0 me-3">Iniciar sesión</p>
+            <p class="lead fw-normal mb-0 me-3">Ingresar Usuario y Clave</p>
           </div>
-
-          <div class="divider d-flex align-items-center my-4">
-         </div>
 
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <input type="email" id="form3Example3" class="form-control form-control-lg"
-               />
+            <input type="email" id="nombreUsuario" name="nombreUsuario" class="form-control form-control-lg" [(ngmodel)] = "nombreUsuario" required />
             <label class="form-label" for="form3Example3">Correo Electronico</label>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
-            <input type="password" id="form3Example4" class="form-control form-control-lg"
-               />
+            <input type="password" id="password" class="form-control form-control-lg" [(ngmodel)] = "nombreUsuario" required />
             <label class="form-label" for="form3Example4">contraseña</label>
           </div>
 
